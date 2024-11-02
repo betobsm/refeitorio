@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Biometria - Sistema Refeitório</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-fingerprint"></i> Cadastro de Biometria</h1>
+            <p class="subtitle">Sistema de Controle de Refeições</p>
+        </header>
+
+        <main class="main-content">
+            <div class="card cadastro-form">
+                <form id="formCadastro">
+                    <div class="form-group">
+                        <label for="id">ID</label>
+                        <input type="text" id="id" name="id" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="loja">Loja</label>
+                            <input type="text" id="loja" name="loja" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="departamento">Departamento</label>
+                            <input type="text" id="departamento" name="departamento" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="senhaDigital">Senha Digital</label>
+                        <input type="password" id="senhaDigital" name="senhaDigital" required>
+                    </div>
+
+                    <div class="biometria-section">
+                        <div class="biometria-icon">
+                            <i class="fas fa-fingerprint"></i>
+                        </div>
+                        <p class="biometria-text">Use o aplicativo móvel para cadastrar sua digital</p>
+                    </div>
+
+                    <div class="qr-section">
+                        <h3>Baixe o Aplicativo</h3>
+                        <div class="qr-container">
+                            <img src="qr-code.png" alt="QR Code do App" id="qrCode">
+                        </div>
+                        <p class="qr-instructions">Escaneie o QR Code para instalar o app</p>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-save"></i> Salvar Cadastro
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="card info-card">
+                <h3><i class="fas fa-info-circle"></i> Informações</h3>
+                <div class="info-content">
+                    <h4>Horários de Refeição</h4>
+                    <ul class="horarios-list">
+                        <li>
+                            <span class="periodo">Almoço:</span>
+                            <span class="horario">11:00 - 14:00</span>
+                        </li>
+                        <li>
+                            <span class="periodo">Janta:</span>
+                            <span class="horario">19:00 - 21:00</span>
+                        </li>
+                    </ul>
+
+                    <h4>Instruções</h4>
+                    <ol class="instrucoes-list">
+                        <li>Preencha todos os dados do formulário</li>
+                        <li>Instale o aplicativo pelo QR Code</li>
+                        <li>Use o app para cadastrar sua digital</li>
+                        <li>Aguarde a confirmação do cadastro</li>
+                    </ol>
+                </div>
+            </div>
+        </main>
+
+        <!-- Modal de Loading -->
+        <div class="modal" id="loadingModal">
+            <div class="modal-content loading">
+                <div class="spinner"></div>
+                <p>Processando cadastro...</p>
+            </div>
+        </div>
+
+        <!-- Modal de Sucesso -->
+        <div class="modal" id="sucessoModal">
+            <div class="modal-content sucesso">
+                <i class="fas fa-check-circle"></i>
+                <h3>Cadastro Realizado!</h3>
+                <p>Seus dados foram salvos com sucesso.</p>
+                <button class="btn-primary" onclick="fecharModal('sucessoModal')">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Sistema de Refeitório - Todos os direitos reservados</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
